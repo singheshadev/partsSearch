@@ -1,0 +1,33 @@
+<html>
+<head>
+<script type="text/javascript">
+ var productname=["product1","product2","product3"];
+ var pimage=["<img src='img1.jpg' alt='Smiley face' height='42px' width='42px'>","<img src='img3.jpg'  alt='Smiley face' height='42px' width='42px'>","<img src='img2.jpg'  alt='Smiley face' height='42px' width='42px'> "];
+ var color=["red","blue","orange"];
+var size=["120*230","220*320","300*980"];
+ var weight=[50,60,70];
+ var manufacturer=["dell","sony","LG"];
+ var price=[5000,6000,7000];
+
+ function Searchp()
+ {
+ 	var t=document.getElementById("pname").value;var y=1;
+ 	for(var i=0;i<productname.length;i++)
+ 	{  y=0;
+ 		if(t==productname[i])
+ 		{
+         var s="<b>productName   productImage  color   size (height X Width)  weight  Manufacturer   Price <b><br>"+
+         productname[i]+" "+pimage[i]+""+color[i]+"   "+size[i]+" "+weight[i]+"  "+manufacturer[i]+ "   "+price[i];
+         document.getElementById("demo").innerHTML=s;
+ 		}
+ 	}if(y==1){document.getElementById("demo").innerHTML="no product found";}
+ }
+ </script>
+ </head>
+<body>
+
+
+ Enter product name : <input type="text" id="pname" autocomplete="on" /> <button onclick="Searchp()">Search</button><br>
+ <p id=demo></p>
+ </body>
+ </html>
